@@ -1,0 +1,393 @@
+/* 抽奖首页 */
+
+.index-wrapper {
+  display: block;
+  padding-bottom: 30rpx;
+  /* background: #fafafa; */
+  overflow: hidden;
+}
+.container {
+  margin-top: 24rpx;
+}
+
+.toptit {
+  padding: 0 24rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ltit {
+  font-family: PingFangSC-Regular;
+  font-size: 18px;
+  color: #1A1F26;
+  letter-spacing: 0.08rpx;
+}
+
+.rtit {
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #7E7E7E;
+  letter-spacing: 0.05rpx;
+  text-align: center;
+}
+
+.shareBtn {
+  display: inline;
+  border: none;
+  background: none;
+}
+
+.lotteryBan {
+  background: #FFFFFF;
+  border-radius: 8rpx;
+  width: 702rpx;
+  /* height: 544rpx; */
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+  padding-bottom: 32rpx;
+  box-shadow: 1rpx 1rpx 15rpx 1rpx #e8e5e5;
+}
+
+.lotteryImg {
+  width: 100%;
+  height: 320rpx;
+  border-radius: 8rpx 8rpx 0 0;
+}
+
+.lotteryMes {
+  padding: 0 24rpx;
+}
+
+.prizeBan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sponsor {
+  font-family: PingFangSC-Medium;
+  font-size: 12px;
+  color: #D51D1D;
+  letter-spacing: 0.05rpx;
+  line-height: 50rpx;
+  font-weight: bold;
+}
+
+.prizeBan {
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #1A1F26;
+  letter-spacing: 0.03px;
+  line-height: 50rpx;
+}
+
+.assistance {
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #D51D1D;
+  letter-spacing: 0.03px;
+  text-align: center;
+  border: 1rpx solid #D51D1D;
+  border-radius: 8rpx;
+  padding: 6rpx 15rpx;
+  min-width: 52px;
+}
+
+.open_date {
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #7E7E7E;
+  letter-spacing: 0.05rpx;
+  line-height: 45rpx;
+}
+
+.isBottom {
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #7E7E7E;
+  letter-spacing: 0.05px;
+  text-align: center;
+}
+
+.botLoading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.m-load, .m-load2 {
+  width: 36rpx;
+  height: 36rpx;
+  /* margin: 100rpx auto; */
+}
+
+.m-load2 {
+  /* background: #535353; */
+  margin-left: 14rpx;
+}
+
+/** 加载动画的静态样式 **/
+
+.m-load2 {
+  position: relative;
+}
+
+.m-load2 .line view {
+  position: absolute;
+  left: 16rpx;
+  top: 0;
+  width: 3rpx;
+  height: 36rpx;
+  background: #9f9f9f;
+}
+
+.m-load2 .line view:before, .m-load2 .line view:after {
+  content: '';
+  display: block;
+  height: 50%;
+  background: #fcfcfc;
+  border-radius: 5rpx;
+}
+
+.m-load2 .line view:nth-child(2) {
+  -webkit-transform: rotate(30deg);
+}
+
+.m-load2 .line view:nth-child(3) {
+  -webkit-transform: rotate(60deg);
+}
+
+.m-load2 .line view:nth-child(4) {
+  -webkit-transform: rotate(90deg);
+}
+
+.m-load2 .line view:nth-child(5) {
+  -webkit-transform: rotate(120deg);
+}
+
+.m-load2 .line view:nth-child(6) {
+  -webkit-transform: rotate(150deg);
+}
+
+.m-load2 .circlebg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 18rpx;
+  height: 18rpx;
+  margin: -9rpx 0 0 -9rpx;
+  background: #f8f8f8;
+  border-radius: 18rpx;
+}
+
+/** 加载动画 **/
+
+@-webkit-keyframes load {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.m-load2 .line view:nth-child(1):before {
+  -webkit-animation: load 1.2s linear 0s infinite;
+}
+
+.m-load2 .line view:nth-child(2):before {
+  -webkit-animation: load 1.2s linear 0.1s infinite;
+}
+
+.m-load2 .line view:nth-child(3):before {
+  -webkit-animation: load 1.2s linear 0.2s infinite;
+}
+
+.m-load2 .line view:nth-child(4):before {
+  -webkit-animation: load 1.2s linear 0.3s infinite;
+}
+
+.m-load2 .line view:nth-child(5):before {
+  -webkit-animation: load 1.2s linear 0.4s infinite;
+}
+
+.m-load2 .line view:nth-child(6):before {
+  -webkit-animation: load 1.2s linear 0.5s infinite;
+}
+
+.m-load2 .line view:nth-child(1):after {
+  -webkit-animation: load 1.2s linear 0.6s infinite;
+}
+
+.m-load2 .line view:nth-child(2):after {
+  -webkit-animation: load 1.2s linear 0.7s infinite;
+}
+
+.m-load2 .line view:nth-child(3):after {
+  -webkit-animation: load 1.2s linear 0.8s infinite;
+}
+
+.m-load2 .line view:nth-child(4):after {
+  -webkit-animation: load 1.2s linear 0.9s infinite;
+}
+
+.m-load2 .line view:nth-child(5):after {
+  -webkit-animation: load 1.2s linear 1s infinite;
+}
+
+.m-load2 .line view:nth-child(6):after {
+  -webkit-animation: load 1.2s linear 1.1s infinite;
+}
+
+
+.nullImg {
+  display: block;
+  width: 282rpx;
+  height: 282rpx;
+  margin: 227rpx auto;
+  margin-bottom: 32rpx;
+}
+.nullText {
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #7E7E7E;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.modal_mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+.modal_dialog {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9500;
+  margin: -392rpx 93rpx;
+}
+.modal_body {
+  width: 564rpx;
+  height: 684rpx;
+  overflow: hidden;
+  /* position: fixed;
+  top: 250rpx;
+  left: 0;
+  z-index: 9500;
+  margin: 0 93rpx; */
+  text-align: center;
+  background: url('../../images/hongbao2.png') no-repeat;
+  background-size: 100% 100%;
+}
+.modal_title {
+  font-family: PingFangSC-Medium;
+  font-size: 17px;
+  color: #FF4854;
+  margin-top: 50rpx;
+  line-height: 48rpx;
+}
+.img_modal {
+  width: 440rpx;
+  height: 220rpx;
+  margin: 24rpx auto;
+}
+.img_modal image {
+  width: 100%;
+  height: 100%;
+}
+.prize_name {
+  font-family: PingFangSC-Medium;
+  font-size: 14px;
+  color: #FF4854;
+  line-height: 40rpx;
+  margin-bottom: 86rpx;
+}
+.open_time {
+  font-family: PingFangSC-Medium;
+  font-size: 10px;
+  color: #FFFFFF;
+  line-height: 28rpx;
+  margin-bottom: 24rpx;
+}
+.join_btn {
+  width: 498rpx;
+  height: 90rpx;
+  background: url('../../images/button_go.png') no-repeat;
+  background-size: 100% 100%;
+  font-family: PingFangSC-Semibold;
+  font-size: 17px;
+  color: #B87921;
+  letter-spacing: 0.17rpx;
+  margin: 0 auto;
+  margin-bottom: 78rpx;
+  border: none;
+  box-shadow: 0.2rpx 2rpx 10rpx #4c4242;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal_close {
+  /* position: fixed;
+  z-index: 9600;
+  top: 1000rpx;
+  left: 351rpx; */
+  margin: 0 auto;
+  margin-top: -40rpx;
+  width: 48rpx;
+  height: 48rpx;
+}
+.modal_close image {
+  width: 100%;
+  height: 100%;
+}
+.modal_bus {
+  /* position: fixed;
+  z-index: 9500;
+  top: 890rpx;
+  left: -44rpx; */
+  position: relative;
+  left: -44rpx;
+  top: -50rpx;
+  width: 277rpx;
+  height: 118rpx;
+}
+.modal_bus image {
+  width: 100%;
+  height: 100%;
+}
+/* 小车动画 */
+@keyframes runRight {
+  from {
+    left: -44rpx;
+  }
+  to {
+    left: 520rpx;
+  }
+}
+/* 显示或关闭内容时动画 */
+.open {
+  animation: runRight 4.5s ease-in both;
+}
+
+/* 已参与标记 */
+.has_join {
+  width: 80rpx;
+  height: 33rpx;
+  background: #1796FF;
+  border-radius: 18rpx 18rpx 18rpx 0;
+  font-family: PingFangSC-Medium;
+  font-size: 10px;
+  color: #fff;
+  line-height: 34rpx;
+  text-align: center;
+  margin-right: 12rpx;
+}
+

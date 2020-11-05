@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/cooperation/index",
+    "pages/convertSucc/index",
+    "pages/myIndex/index",
+    "pages/couponDetail/index",
+    "pages/couponConvert/index",
+    "pages/busCoupon/index",
+    "pages/lotteryDetail/index",
+    "pages/luckRecord/index",
+    "pages/allDraw/index",
+    "pages/myAddress/index",
+    "pages/totalUsers/index",
+    "pages/webview/webview",
+    "pages/richText/richText"
+  ],
+  "window": {
+    "enableDSL": "YES",
+    "enableJSC": "YES",
+    "enableKeepAlive": "NO",
+    "enableWK": "YES",
+    "nboffline": "sync",
+    "tinyPubRes": "YES",
+    "showDomain": "NO",
+    "backgroundColor": "#F8F8F8",
+    "defaultTitle": "首页",
+    "titleBarColor": "#108EE9"
+  },
+  "tabBar": {
+    "items": [{
+      "pagePath": "pages/index/index",
+      "name": "首页",
+      "icon": "images/home.png",
+      "activeIcon": "images/homeselection.png"
+    },{
+      "pagePath": "pages/myIndex/index",
+      "name": "我的",
+      "icon": "images/my.png",
+      "activeIcon": "images/myselection.png"
+    }]
+  },
+  "debug": true
+}

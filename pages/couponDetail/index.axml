@@ -1,0 +1,24 @@
+<view class="index-wrapper">
+  <view class="container bgYellow">
+    <view class="couponBg">
+      <view class="top">
+        <view class="couTit">支付宝{{detail.name}}
+        </view>
+        <view class="couSubTit">{{detail.name}}*1
+        </view>
+        <view class="yellowText">手机支付宝付款时会自动抵扣</view>
+        <view>有效期：{{start_time}}-{{end_time}}</view>
+      </view>
+      <image style="width:100%;" src="../../images/voucher-line.png" mode="widthFix" />
+      <view style="text-align:left;padding:0 26rpx;">
+        <view style="color: #505064;line-height:44rpx;font-size:15px;">支付宝乘车券使用规则：</view>
+        <!-- <view>
+          {{detail.voucher_description}}
+        </view> -->
+        <block a:for="{{ description }}">
+          <view class="eachDescription">{{item}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

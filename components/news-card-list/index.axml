@@ -1,0 +1,16 @@
+<view class="news">
+  <block a:for="{{cardNewsData}}" a:if="{{count ? index                
+    <count : true}}">
+      <view class="newbox" onTap="onBtnItem">
+        <view class="newleft">
+          <view class="newtitle">{{item.title}}                                                  
+          </view>
+          <view class="newdate">{{item.time}}                                                  
+          </view>
+        </view>
+        <view class="picturebox">
+          <image class="newright" src="{{item.bannerUrl}}" mode="scaleToFill" />
+        </view>
+      </view>
+  </block>
+</view>

@@ -1,0 +1,20 @@
+<view class="index-wrapper">
+
+    <view class="userNumber">
+      <view class="userNum">
+        {{totalNum}} 位{{(type=='0')&&('参与者')}}{{(type!='0')&&('中奖者')}}
+      </view>
+
+      <view class="user_list">
+        <block a:for="{{ user_list }}">
+          <view class="user_icon">
+            <image src="{{item.icon}}" mode="aspectFill" />
+          </view>
+        </block>
+      </view>
+
+      <view a:if="{{has_next_page}}" class="toSee" onTap="seeMore">
+        加载更多</view>
+    </view>
+
+</view>

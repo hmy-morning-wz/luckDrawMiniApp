@@ -1,0 +1,36 @@
+<view class="index-wrapper">
+  <view class="container bgWhite">
+    <view style="padding:0 32rpx" a:if="{{luckRecord.length>0}}">
+      <view class="title">已结束</view>
+      <view style="border-top: 1px solid #d9d9d9;">
+      </view>
+    </view>
+    <view>
+      <view class="recordList" a:if="{{luckRecord.length>0}}">
+        <block a:for="{{ luckRecord }}">
+          <view class="eachRecord" data-obj="{{item}}" onTap="handleClick">
+            <view class="recordAward">
+              奖品：
+              <block a:for="{{ item.award.award_list }}" a:for-item="award_item">                
+                  {{award_item}};
+              </block>
+              {{item.award.pond}}
+            </view>
+            <view class="rightRecord">
+              <view class="recordTime">
+                {{item.open_date.split(' ')[0]}}
+              </view> 
+              <image src="../../images/arrow1.png" mode="aspectFill" />
+            </view>
+          </view>         
+        </block>
+      </view>
+      <view a:if="{{luckRecord.length==0}}">
+        <image class="nullImg" src="../../images/kongyemian2.png" mode="aspectFill" />
+        <view class="nullText">您还没有中过奖哦</view>
+        <view class="toDraw" onTap="toDraw">
+          去抽奖</view>
+      </view>
+    </view>
+  </view>
+</view>

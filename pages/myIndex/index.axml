@@ -1,0 +1,72 @@
+<view class="index-wrapper">
+  <lifestyle publicId="2018052160219015" />
+  <view class="life_shadow"></view>
+  <view class="container bgWhite">
+    <view class="myPart">
+      <view class="userInfo">
+        <image class="myImg" src="{{myInfo.icon}}" mode="aspectFill" />
+        <view class="myName">
+          {{myInfo.name || '用户昵称'}}
+        </view>
+      </view>
+      <view class="myDraw">
+        <view class="eachDraw" onTap="toAllDraw">
+          <view class="topNum">{{myInfo.draw_num}}</view>
+          <view class="botMenu">全部抽奖</view>
+        </view>
+        <view class="line"></view>
+        <view class="eachDraw" onTap="luckRecord">
+          <view class="topNum">{{myInfo.lucky_num}}</view>
+          <view class="botMenu">中奖纪录</view>
+        </view>
+        <view class="line"></view>
+        <view class="eachDraw" onTap="toBusCoupon">
+          <view class="topNum">{{myInfo.user_amt/100}}</view>
+          <view class="botMenu">礼金</view>
+        </view>
+      </view>
+    </view>
+    <view class="bg-gray h20"></view>
+    <view class="menuPart">
+      <view class="eachList" onTap="toBusCoupon">
+        <view class="leftList">
+          <image src="../../images/dhccq.png" mode="aspectFill" />
+          <view class="listText">兑换乘车券</view>
+        </view>
+        <view class="rightList">
+          <view class="redInfo">礼金可兑换公交乘车券</view>
+          <image src="../../images/arrow_big.png" mode="aspectFill" />
+        </view>
+      </view>
+      <button class="eachList" hover-class="none" open-type="share">
+        <view class="leftList">
+          <image src="../../images/yqhy.png" mode="aspectFill" />
+          <view class="listText">邀请好友</view>
+        </view>
+        <view class="rightList">
+          <image src="../../images/arrow_big.png" mode="aspectFill" />
+        </view>
+      </button>      
+      <!-- <view class="bg-gray h20 bot_line"></view> -->
+      <view class="eachList" onTap="toCoop">
+        <view class="leftList">
+          <image src="../../images/wyssy.png" mode="aspectFill" />
+          <view class="listText">我要上首页</view>
+        </view>
+        <view class="rightList">
+          <image src="../../images/arrow_big.png" mode="aspectFill" />
+        </view>
+      </view>
+      <view class="eachList" onTap="toFreeBus">
+        <view class="leftList">
+          <image src="../../images/mfcc.png" mode="aspectFill" />
+          <view class="listText">免费乘车</view>
+        </view>
+        <view class="rightList">
+          <view class="rightImg"><image src="../../images/new.png" mode="aspectFill" /></view>
+          <image src="../../images/arrow_big.png" mode="aspectFill" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

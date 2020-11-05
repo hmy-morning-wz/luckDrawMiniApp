@@ -1,0 +1,11 @@
+<view class="index-wrapper">
+  <view class="container bgWhite">
+    <view class="succ">
+      <image src="../../images/success.png" mode="aspectFit" />
+      <view>兑换成功</view>
+    </view>
+    <view class="okBtn" onTap="toIndex">
+      完成
+    </view>
+  </view>
+</view>

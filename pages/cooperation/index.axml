@@ -1,0 +1,21 @@
+<view class="index-wrapper">
+  <view class="container">    
+    <form onSubmit="formSubmit" onReset="formReset">
+      <view class="topBan">
+        <view class="grayText">
+          针对企业合作伙伴开放。进行品牌宣传与产品推介，按天展示在首页。如有意向，请在下面输入框填写信息联系我们。
+        </view>
+        <view class="redText">
+          请填写您的称呼、联系方式、公司及期望推广产品的简介
+        </view>
+        <textarea placeholder="请填写" maxlength="none" auto-height name="cooperation_info" class="textPart" placeholder-class="plaClass" />
+      </view>
+      <view class="botBan">
+        <view class="grayText">感谢支持与信赖，我们将在3个工作日内与您联系</view>
+        <button class="okBtn" formType="submit">
+          提交
+        </button>
+      </view>
+    </form>
+  </view>
+</view>

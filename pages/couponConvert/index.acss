@@ -1,0 +1,126 @@
+/* 兑换券 */
+
+.eachCou {
+  /* width: 686rpx; */
+  height: 136rpx;
+  margin: 0 auto;
+  /* margin-bottom: 30rpx; */
+  font-family: PingFangSC-Medium;
+  font-size:16px;
+  color: #998115;
+  font-size: bold;
+  line-height: 38rpx;
+  letter-spacing: 0.07rpx;
+  padding-left: 35rpx;
+  padding-right: 66rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: url("../../images/background2.png") no-repeat;
+  background-size: 100% 100%;
+}
+.couRemain {
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 38rpx;
+  margin-top: 8rpx;
+}
+
+.useInfo {
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #1A1F26;
+  line-height: 66rpx;
+  margin-top: 30rpx;
+}
+.eachDescription {
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #AAAAAA;
+  line-height: 36rpx;
+  margin-bottom: 5rpx;
+}
+
+.botBan {
+  height: 318rpx;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;  
+  box-shadow: 1rpx 1rpx 15rpx 1rpx #e8e5e5;
+  padding-top: 32rpx;
+}
+
+.convertBtn {
+  background: #D51D1D;
+  border-radius: 8rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-align: center;
+  letter-spacing: 0.07px;
+  height: 96rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line1 {
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #1A1F26;
+}
+.line2 {
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #D51D1D;
+  /* line-height:  */
+  margin-bottom: 55rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.numBan {
+  display: flex;
+  width: 160rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+.minus {
+  height: 40rpx;
+  width: 40rpx;
+  border-radius: 50%;
+  /* border: 1px solid #D51D1D;
+  color: #D51D1D;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 18px;
+  line-height: 32rpx; */
+}
+.plus {
+  height: 40rpx;
+  width: 40rpx;
+  border-radius: 50%;
+  /* border: 1px solid #D51D1D;
+  color: white;
+  font-weight: bold;
+  background: #D51D1D;
+  text-align: center;
+  border-radius: 50%;
+  vertical-align: middle;
+  font-size: 16px; */
+}
+
+.minus image {
+  width: 100%;
+  border-radius: 50%;
+  /* height: 100%; */
+}
+.plus image {
+  width: 100%;
+  border-radius: 50%;
+  /* height: 100%; */
+}

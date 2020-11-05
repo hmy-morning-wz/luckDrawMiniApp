@@ -1,0 +1,112 @@
+  
+<view class="index-wrapper">
+  <!-- <scroll-view scroll-y="{{true}}" style="height: 100%;" onScrollToUpper="upper" onScrollToLower="lower" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"> -->
+  <!-- <favorite>收藏小程序，天天好运气！</favorite> -->
+  <!-- <lifestyle publicId="2018052160219015" /> -->
+  <view class="container" a:if="{{lotteryList.length>0}}">
+    <!-- <view class="lh100 toptit"><view class="ltit">趣抽奖</view><view class="rtit"><text onTap="tobeCooperation" decode="{{true}}">我要上首页&nbsp;</text>|
+        <text onTap="onShareAppMessage" decode="{{true}}">&nbsp;
+          <button open-type="share" hover-class="none" class="shareBtn rtit">分享
+          </button></text></view></view> -->
+    <scroll-view scroll-y="{{true}}" style="min-height: 100vh;"><view>
+      <block a:for="{{ lotteryList }}">
+        <view class="lotteryBan bgWhite" data-obj="{{item}}" id="lotteryListBtn" onTap="handleClick">
+          <view>
+            <image class="lotteryImg" src="{{'https://sit-img-citytsm.oss-cn-hangzhou.aliyuncs.com/'+item.img}}" mode="aspectFill" />
+          </view>
+          <view class="lotteryMes">
+            <view class="sponsor">{{item.sponsor_name}}  赞助
+            </view>
+            <view class="prizeBan">
+              <view>
+                <block a:for="{{ item.award.award_list }}" a:for-item="award_list">
+                  <view>
+                    <!-- 奖品<text a:if="{{item.award.pond || (item.award.award_list.length>1)}}">{{index+1}}</text>： -->                      {{award_list.award_name}}*{{award_list.award_num}}
+                  </view>
+                </block>
+                <view a:if="{{item.award.pond}}">
+                  <!-- 奖品<text>{{item.award.award_list.length+1}}</text>： -->                    乘车礼金池：累计
+                  <text style="color:#D51D1D;">{{item.award.pond/100}}
+                  </text>元，中奖率
+                  <text style="color:#D51D1D;">{{item.award.pond_prod}}%
+                  </text>
+                </view>
+              </view>
+              <view a:if="{{item.award.pond}}" class="assistance">瓜分礼金
+              </view>
+            </view>
+            <view style="display:flex;align-items:center;">
+              <view a:if="{{item.is_join}}" class="has_join">已参与
+              </view>
+              <view class="open_date">{{item.open_date}}  自动开奖
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view></scroll-view>
+    <view a:if="{{notBottom}}" class="botLoading">
+      <view class="isBottom">正在努力加载
+      </view>
+      <view class="m-load2">
+        <view class="line">
+          <view>
+          </view>
+          <view>
+          </view>
+          <view>
+          </view>
+          <view>
+          </view>
+          <view>
+          </view>
+          <view>
+          </view>
+        </view>
+        <view class="circlebg">
+        </view>
+      </view>
+    </view>
+    <view a:if="{{isBottom}}" class="isBottom">--已经到底了--
+    </view>
+    <view class="lh20">
+    </view>
+  </view>
+  <view a:if="{{lotteryList.length==0}}">
+    <image class="nullImg" src="../../images/backgroundcopy3.png" mode="aspectFill" />
+    <view class="nullText">暂时没有活动了
+    </view>
+    <view class="nullText">一会再来哦～
+    </view>
+  </view>
+  <!--custom Modal-->
+  <view class="modal_mask" a:if="{{showModal}}">
+  </view>
+  <view class="modal_dialog" a:if="{{showModal}}">
+    <view class="modal_body">
+      <view class='modal_title'>{{popAd.title}}      
+      </view>
+      <view class='img_modal'>
+        <image src="{{popAd.img}}" mode="aspectFill">
+        </image>
+      </view>
+      <view class="prize_name">        {{popAd.award_list[0]}}      
+      </view>
+      <view class="open_time">        {{popAd.open_date}}      
+      </view>
+      <view class='btns'>
+        <button class='join_btn' onTap="toJoinLuck">{{popAd.button_name}}
+        </button>
+      </view>
+    </view>
+    <view class="modal_bus open">
+      <image src="../../images/bus.png" mode="aspectFill">
+      </image>
+    </view>
+    <view class="modal_close" onTap="hideModal">
+      <image src="../../images/close2.png" mode="aspectFit">
+      </image>
+    </view>
+  </view>
+  <!-- </scroll-view> -->
+</view>

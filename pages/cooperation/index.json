@@ -1,0 +1,10 @@
+{
+  "pullRefresh": false,
+  "titleBarColor": "#ffffff",
+  "defaultTitle": "我要上首页",
+  "usingComponents": {
+    "grid": "mini-antui/es/grid/index",
+    "tabs": "mini-antui/es/tabs/index",
+    "tab-content": "mini-antui/es/tabs/tab-content/index"
+  }
+}

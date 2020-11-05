@@ -1,0 +1,81 @@
+/* 填写地址 */
+.container {
+  /* padding: 0 24rpx; */
+}
+.btn-area {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 66rpx;
+}
+.btn {
+  outline: none;
+  border: none;
+  border-radius: 8rpx;
+  width: 680rpx;
+  background: #D51D1D;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #FFFFFF;
+  height: 100rpx;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #d9d9d9;
+  width: 686rpx;
+  margin: 0 auto;
+}
+.placeholder_cla2 {
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #D3D3D3;
+  letter-spacing: 0;
+  line-height: 110rpx;
+}
+.leftInfo {
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #7E7E7E;
+  letter-spacing: 0;
+  line-height: 110rpx;
+  width: 28%;
+}
+.inputBan {
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #1A1F26;
+  letter-spacing: 0;
+  line-height: 110rpx;
+  width: 72%;
+  height: 108rpx;
+}
+.textBan {
+  /* padding: 5px 5px; */
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #1A1F26;
+  letter-spacing: 0;
+  width: 72%;
+  margin: 10rpx 0;
+}
+.placeholder_cla2 {
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #D3D3D3;
+  letter-spacing: 0;
+}
+
+/* 手机号验证错误 */ 
+.errorTel {
+  font-family: PingFangSC-Regular;
+  font-size: 11px;
+  color: #D51D1D;
+  letter-spacing: 0;
+  position: absolute;
+  left: 30%;
+  top: 205rpx;
+}

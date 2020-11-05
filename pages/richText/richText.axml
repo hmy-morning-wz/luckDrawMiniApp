@@ -1,0 +1,4 @@
+<view>
+  <rich-text nodes="{{nodes}}" onTap="tap">
+</rich-text>
+</view>

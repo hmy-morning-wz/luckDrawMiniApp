@@ -1,0 +1,8 @@
+      
+<view class="rights-card" onTap="onBtnItem">
+  <image class="rights-card-img" src="{{imgUrl}}" mode="aspectFit" />
+  <view class="title">{{title}}                          
+  </view>
+  <view class="description">{{description}}                          
+  </view>
+</view>

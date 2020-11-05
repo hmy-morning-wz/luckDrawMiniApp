@@ -1,0 +1,42 @@
+.news {
+  padding-left: 25rpx;
+  padding-right: 25rpx;
+  background: #FFFFFF;
+}
+
+.news .newbox {
+  width: 100%;
+  height: 181rpx;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20rpx;
+}
+
+.news .newbox .newleft {
+  width: 450rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10rpx 10rpx 10rpx 0;
+}
+
+.news .newbox .newleft .newtitle {
+  font-size: 32rpx;
+  line-height: 50rpx;
+}
+
+.news .newbox .newleft .newdate {
+  font-size: 26rpx;
+  line-height: 40rpx;
+  color: #999999;
+}
+
+.news .newbox .picturebox {
+  width: 250rpx;
+  height: 181rpx;
+}
+
+.news .newbox .newright {
+  width: 250rpx;
+  height: 181rpx;
+}

@@ -1,0 +1,81 @@
+/* 中奖记录 */
+
+.container {
+  padding-bottom: 32rpx;
+}
+
+/* 中奖记录 */
+.recordList {
+  padding: 0 32rpx;
+}
+.eachRecord {
+  height: 110rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d8d8d8;
+}
+.recordAward {
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #1A1F26;
+  letter-spacing: 0;
+  width: 70%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  line-height: 32rpx;
+}
+.recordTime {
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #AAAAAA;
+  letter-spacing: 0;
+  line-height: 32rpx;
+}
+.rightRecord {
+  display: flex;
+  align-items: center;
+}
+.rightRecord image {
+  width: 26rpx;
+  height: 32rpx;
+}
+
+.title {
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #7E7E7E;
+  letter-spacing: 0.06px;
+  line-height: 98rpx;
+}
+
+/* 记录为空 */
+.nullImg {
+  display: block;
+  width: 282rpx;
+  height: 282rpx;
+  margin: 227rpx auto;
+  margin-bottom: 32rpx;
+}
+.nullText {
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #7E7E7E;
+  letter-spacing: 0;
+  text-align: center;
+  margin-bottom: 68rpx;
+}
+.toDraw {
+  width: 176rpx;
+  margin: 0 auto;
+  font-family: PingFangSC-Medium;
+  font-size: 16px;
+  font-weight: bold;
+  color: #D51D1D;
+  letter-spacing: 0.07px;
+  text-align: center;
+  line-height: 70rpx;
+  border: 1px solid #D51D1D;
+  border-radius: 8rpx;
+}

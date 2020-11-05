@@ -1,0 +1,372 @@
+  <!-- // 引入模板 -->
+<import src="../wxParse/wxParse.axml"/>
+<view class="index-wrapper">
+    <!-- <lifestyle publicId="2018052160219015" /> -->
+    <view>
+      <view class="lotteryBan">
+        <view>
+          <image class="lotteryImg" src="{{'https://sit-img-citytsm.oss-cn-hangzhou.aliyuncs.com/'+lotteryDetail.img}}" mode="widthFix" />
+        </view>
+        <view class="lotteryMes">
+          <view class="prizeBan">
+            <block a:for="{{ lotteryDetail.award.award_list }}">
+              <view>
+                奖品<text a:if="{{lotteryDetail.award.pond_info || (lotteryDetail.award.award_list.length>1)}}">{{index+1}}</text>：{{item.award_name}}*{{item.award_num}}
+              </view>
+            </block>
+            <view a:if="{{lotteryDetail.award.pond_info}}">
+              奖品<text>{{lotteryDetail.award.award_list.length+1}}</text>：乘车礼金池，累计<text style="color:#D51D1D;">{{lotteryDetail.award.pond_info.curr_amt/100}}</text>元
+            </view>
+          </view>
+          <view class="open_date">{{lotteryDetail.open_date}}  自动开奖</view>
+          <view class="sponsorBan" id="toSponsorTopBtn" onTap="gotoSponsor">
+            <view>
+              奖品赞助商
+            </view>
+            <view class="sponsor">
+              {{lotteryDetail.sponsor_name}}
+              <!-- <image a:if="{{ lotteryDetail.url_type == 1 }}" src="../../images/xiaochengxu.png" mode="aspectFill" />
+              <image a:elif="{{ lotteryDetail.url_type == 2 }}" src="../../images/taobao.png" mode="aspectFill" />
+              <image a:elif="{{ lotteryDetail.url_type == 3 }}" src="../../images/tianmao.png" mode="aspectFill" />
+              <image a:elif="{{ lotteryDetail.url_type == 4 }}" src="../../images/weibo.png" mode="aspectFill" />
+              <image a:elif="{{ lotteryDetail.url_type == 5 }}" src="../../images/shenghuohao.png" mode="aspectFill" />
+              <image a:elif="{{ lotteryDetail.url_type == 6 }}" src="../../images/koubei.png" mode="aspectFill" /> -->
+              <view class="arrow" a:if="{{lotteryDetail.url_type !== 0}}">
+                <image src="../../images/arrow1.png" mode="aspectFill" />
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="h20"></view>
+      <view class="sponsor_info">
+        {{lotteryDetail.sponsor_info}}
+      </view>
+      <view class="h20"></view>
+      <view a:if="{{lotteryDetail.is_open_award=='1'}}">
+        <view class="tabClas bgWhite">
+          <block a:for="{{tabs}}">
+            <view key="{{index}}" onTap="toTapTap"  data-index="{{index}}" class="{{activeTab===index? 'activeTab':''}}">
+              {{item.title}}</view>
+          </block>
+        </view>
+        <view style="width: 686rpx; margin: 0 auto;border-top: 1px solid #d9d9d9;"></view>
+      </view>
+
+      <view a:if="{{lotteryDetail.is_open_award=='0' || activeTab==1}}">
+        <view class="prizeList">
+          <view>
+            <view class="fonts">奖品简介</view>
+            <!-- <view class="infoImg">
+              <image src="{{lotteryDetail.award_info}}" mode="aspectFill" />
+            </view> -->
+            <!-- //这里data中article为bindName -->
+            <view style="margin:25rpx auto;">
+              <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+            </view>
+          </view>
+          <view a:if="{{lotteryDetail.award.pond_info}}">
+            <view class="fonts">奖池<text></text>简介</view>
+            <view class="award_pool">
+              <view>助力礼金池，将随机增加礼金池的金额，{{lotteryDetail.award.pond_info.pond_prod}}%的抽奖用户随机瓜分礼金池，所获礼金可兑换公交乘车券。</view>
+              <view class="progressBan" style="overflow:visible">
+                <view class="topAmt" style="overflow:visible">
+                  <view class="curr_amt" style="left: {{left}}">
+                    {{lotteryDetail.award.pond_info.curr_amt/100}}元</view>
+                  <view class="triang" style="left: {{leftTri}}"></view>
+                </view>
+                <view class="botLine">
+                  <view class="progressLine"
+                    style="background: linear-gradient(to right,#d51d1d {{progress}},#ededed {{progress}});">
+                  </view>
+                  <view class="fll">{{lotteryDetail.award.pond_info.pond_amt/100}}元</view>
+                  <view class="flr">{{lotteryDetail.award.pond_info.pond_amt_limt/100}}元</view>
+                </view>
+              </view>
+              <view style="display:flex;justify-content:center;">
+                <view id="assistantBtn" class="redBtn" a:if="{{lotteryDetail.pond_btn_flag === '1'}}" onTap="toAssistance">
+                  我要助力
+                </view>
+                <view class="redBtn" a:if="{{lotteryDetail.pond_btn_flag === '2'}}">
+                  今日已助力
+                </view>
+                <view class="redBtn" a:if="{{lotteryDetail.pond_btn_flag === '3'}}">
+                  奖池已满
+                </view>
+                <view class="redBtn" a:if="{{lotteryDetail.is_open_award=='1'}}">
+                  已瓜分
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="sponsorBan2" a:if="{{lotteryDetail.url_type != 0}}">
+            <view class="sponsor">
+              {{lotteryDetail.sponsor_name}}
+              <!-- <image a:if="{{ lotteryDetail.url_type == '1' }}" src="../../images/xiaochengxu.png" mode="aspectFill" />
+              <image a:if="{{ lotteryDetail.url_type == '2' }}" src="../../images/taobao.png" mode="aspectFill" />
+              <image a:if="{{ lotteryDetail.url_type == '3' }}" src="../../images/tianmao.png" mode="aspectFill" />
+              <image a:if="{{ lotteryDetail.url_type == '4' }}" src="../../images/weibo.png" mode="aspectFill" />
+              <image a:if="{{ lotteryDetail.url_type == '5' }}" src="../../images/shenghuohao.png" mode="aspectFill" />
+              <image a:if="{{ lotteryDetail.url_type == '6' }}" src="../../images/koubei.png" mode="aspectFill" /> -->
+            </view>
+            <view id="toSponsorBotBtn" onTap="gotoSponsor">
+              点击查看
+            </view>
+          </view>
+        </view>
+        <view class="drawLuckBan">
+          <form onSubmit="toDrawLuck" report-submit="{{true}}">
+            <button id="drawLuckBtn" hover-class="none" formType="submit" a:if="{{lotteryDetail.draw_btn_flag === '1'}}" class="toDraw drawLuck">
+              参与抽奖
+            </button>
+          </form>
+          <view a:if="{{lotteryDetail.draw_btn_flag === '2'}}" class="hasDraw drawLuck">
+            <view class="opact">待开奖</view>
+          </view>
+          <view a:if="{{lotteryDetail.draw_btn_flag === '3'}}" class="hasDraw drawLuck">
+            <view>
+              <view class="opact">待开奖</view>
+              <view class="upRate">中奖率翻倍</view>
+            </view>
+          </view>
+
+          <view class="userNumber">
+            <image class="touch_finger" src="../../images/screen-touch.png" mode="aspectFill" />
+            <view>已有 {{lotteryDetail.user_list_num}} 人参与</view>
+            <!-- <text a:if="{{lotteryDetail.user_list_num > 7}}" class="toSee" onTap="seeMoreZero">
+              查看全部 ></text> -->
+          </view>
+
+          <view class="adsense" a:if="{{bot_ad}}" onTap="toSeeBotAd">
+            <image src="{{bot_ad.img}}" mode="aspectFill" />
+          </view>
+
+          <!-- <view class="user_list">
+            <block a:for="{{ lotteryDetail.user_list }}">
+              <view class="user_icon">
+                <image src="{{item.user_icon}}" mode="aspectFill" />
+              </view>
+            </block>
+          </view> -->
+
+          <view a:if="{{lotteryDetail.is_open_award == '0'}}" class=" pupContent {{click? 'showContent': 'hideContent'}} {{option? 'open': 'close'}}">
+            <view class="twoBtn" a:if="{{lotteryDetail.draw_btn_flag !== '1'}}">
+              <button id="shareBtn"  open-type="share" class="toShare">
+                分享给好友，中奖概率翻倍
+              </button>
+              <view onTap="toIndex" class="toShare otherDraw">
+                继续抽奖
+              </view>
+            </view>
+            <view class="twoBtn" a:if="{{lotteryDetail.draw_btn_flag == '1'}}">
+              <button id="shareButton"  open-type="share" class="toShare">
+                分享给好友
+              </button>
+              <view onTap="toIndex" class="toShare otherDraw">
+                继续抽奖
+              </view>
+            </view>
+          </view>          
+          <view a:if="{{lotteryDetail.is_open_award == '0'}}" style="height:106rpx;"></view>
+        </view>
+      </view>
+
+      <view a:if="{{lotteryDetail.is_open_award=='1' && activeTab==0}}">
+        <view class="bgWhite lotteryMes">
+          <view class="isAward" a:if="{{lotteryDetail.curr_user_award.is_award=='2'}}">
+            <view class="awardTit">恭喜！您已中奖</view>
+            <view class="user_award_info">
+              <view style="min-width:14%">奖品：</view>
+              <view>
+                <block a:for="{{lotteryDetail.curr_user_award.user_award_info.split(' ')}}">
+                  <view>{{item}}</view>
+                </block>
+              </view>
+              <!-- <view>{{lotteryDetail.curr_user_award.user_award_info}}</view> -->
+            </view>
+            <view a:if="{{lotteryDetail.curr_user_award.award_type=='0'}}">
+              <view class="adressBtn" onTap="editAddress"
+                a:if="{{lotteryDetail.curr_user_award.is_address=='1'}}">
+                <image src="../../images/locationlogo.png" mode="aspectFill" />
+                请填写收货地址</view>
+              <view class="adressBtn" 
+                a:if="{{lotteryDetail.curr_user_award.is_address=='0'}}">
+                <image src="../../images/locationlogo.png" mode="aspectFill" />
+                地址已填写</view>
+              <view class="adressTip">
+                温馨提示：中奖后3天内填写地址有效
+              </view>
+            </view>
+            <view a:if="{{lotteryDetail.curr_user_award.award_type=='1'}}">
+              <view a:if="{{lotteryDetail.curr_user_award.lottery_info}}">
+                <block a:for="{{lotteryDetail.curr_user_award.lottery_info}}">
+                  <view class="couponBan">
+                    <image src="../../images/successcopy.png" mode="aspectFill" />
+                    <view class="couponInfo">
+                      <view class="couponTit">
+                        {{item.lottery_title}}</view>
+                      <view class="couponSuntit">
+                        {{item.lottery_subtitle}}</view>
+                    </view>
+                    <view class="couponBtn" data-item="{{item}}" onTap="toCoupon">
+                      点击领取
+                    </view>
+                  </view>
+                </block>
+              </view>
+              <view a:if="{{lotteryDetail.curr_user_award.bus_coupon_info	}}">
+                <block a:for="{{lotteryDetail.curr_user_award.bus_coupon_info	}}">
+                  <view class="couponBan">
+                    <image src="../../images/successcop.png" mode="aspectFill" />
+                    <view class="couponInfo">
+                      <view class="buscouponTit">
+                        {{item.bus_coupon_title}}</view>
+                      <view a:if="{{lotteryDetail.curr_user_award.is_get_bus_coupon==1}}" class="buscouponSuntit">
+                        有效期：{{item.bus_coupon_start.slice(0,10)}} 至 {{item.bus_coupon_end.slice(0,10)}}</view>
+                      <view a:if="{{lotteryDetail.curr_user_award.is_get_bus_coupon==0}}" class="buscouponSuntit">
+                        领取后使用手机支付宝付款时会自动抵扣</view>
+                    </view>
+                    <view a:if="{{lotteryDetail.curr_user_award.is_get_bus_coupon==1}}" class="couponBtn" data-obj="{{item}}" onTap="toCouponDetail">
+                      查看详情
+                    </view>
+                    <view a:if="{{lotteryDetail.curr_user_award.is_get_bus_coupon==0}}" class="couponBtn" data-obj="{{item}}" onTap="toRecieveCoupon">
+                      立即领取
+                    </view>
+                  </view>
+                </block>
+                <view a:if="{{lotteryDetail.curr_user_award.is_get_bus_coupon==0}}" class="redInfo">
+                  温馨提示：中奖后3天内领取有效
+                </view>
+              </view>
+              <view a:if="{{lotteryDetail.curr_user_award.win_code_info	}}">
+                <!-- <block a:for="{{lotteryDetail.curr_user_award.win_code_info	}}"> -->
+                  <view class="wincodeBan">
+                    <view class="wincode_code">
+                      <view class="wincode">
+                        {{lotteryDetail.curr_user_award.win_code_info.win_code}}
+                      </view>
+                    </view>
+                    <view class="wincode_desc">
+                      <view class="desc_tit">使用说明：</view>
+                      <block a:for="{{ description }}">
+                        <view key="{{index}}" class="desc_info">
+                          {{item}}<text a:if="{{index<(description.length-1)}}">；</text>
+                        </view>
+                      </block>
+                    </view>
+                  </view>
+                <!-- </block> -->
+              </view>
+            </view>
+          </view>
+          <view class="notAward" a:if="{{lotteryDetail.curr_user_award.is_award=='1'}}">
+            <view class="awardTit">很遗憾，您未中奖</view>
+            <view a:if="{{lotteryDetail.curr_user_award.lottery_info.length>0}}" class="foryou"> 为您准备了以下福利</view>
+            <view a:if="{{lotteryDetail.curr_user_award.lottery_info.length>0}}" class="suggestCoupon">
+              <block a:for="{{lotteryDetail.curr_user_award.lottery_info}}">
+                <view key="{{index}}" class="eachSuggestCoupon" style="border: 1px solid {{index==0? '#D51D1D':'#D3B973' }}">
+                  <view class="suggestCouponInfo">
+                    <view class="suggestCouponTit">
+                      {{item.lottery_title}}</view>
+                    <view class="suggestCouponSuntit">
+                      {{item.lottery_subtitle}}</view>
+                    <view class="suggestCouponBtn" style="background-color: {{index==0? '#D51D1D':'#D3B973' }}" data-item="{{item}}" onTap="toCoupon">
+                      {{item.url_type==5? '点击查看':'点击领取'}}
+                    </view>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </view>
+          <view class="prize_user_Part">
+            中奖者名单
+            <block a:for="{{lotteryDetail.curr_award_detail_list}}">
+              <view class="prize_user_Ban">
+                <view class="prizeBar">
+                  奖品：{{item.award_name}}*{{item.award_num}}
+                </view>
+                <view class="inPrizeUser">
+                  <block a:for="{{ item.curr_award_detail}}" a:for-item="prize_user_item">
+                    <view class="prize_user_item">
+                      <view class="prize_user_icon">
+                        <image src="{{prize_user_item.icon}}" />
+                      </view>
+                      <view class="prize_user_name">{{prize_user_item.name||'中奖者'}}</view>
+                    </view>
+                  </block>
+                </view>
+                <view class="info6" a:if="{{item.curr_award_detail_num > 6}}">
+                  - 奖品中奖者名单随机展示6位 -
+                </view>
+                <!-- <view class="toSeeAll" a:if="{{item.curr_award_detail_num > 6}}"   data-item="{{item}}" onTap="seeMoreOne" >
+                  查看全部>
+                </view> -->
+              </view>
+            </block>
+            <view class="prize_user_Ban" a:if="{{lotteryDetail.award.pond_info}}">
+              <view class="prizeBar">
+                奖品：乘车礼金池，累计{{lotteryDetail.award.pond_info.curr_amt/100}}元
+              </view>
+              <view class="inPrizeUser">
+                <block a:for="{{ lotteryDetail.curr_pond_detail}}">
+                  <view class="prize_user_item">
+                    <view class="prize_user_icon">
+                      <image src="{{item.icon}}" mode="aspectFit"/>
+                    </view>
+                    <view class="prize_user_name">{{item.name||'中奖者'}}</view>
+                  </view>
+                </block>
+              </view>
+              <view class="info6" a:if="{{lotteryDetail.curr_pond_detail_num > 6}}">
+                - 奖池中奖者名单随机展示6位 -
+              </view>
+              <!-- <view class="toSeeAll" a:if="{{lotteryDetail.curr_pond_detail_num > 6}}" onTap="seeMoreTwo">
+                查看全部>
+              </view> -->
+            </view>
+          </view>
+        </view>
+
+        <view class="userNumber">
+          <image class="touch_finger" src="../../images/screen-touch.png" mode="aspectFill" />
+          <view>共有 {{lotteryDetail.user_list_num}} 人参与</view>
+          <!-- <text a:if="{{lotteryDetail.user_list_num > 7}}" class="toSee" onTap="seeMoreZero">
+            查看全部 ></text> -->
+        </view>
+
+        <view class="adsense" a:if="{{bot_ad}}" onTap="toSeeBotAd">
+          <image src="{{bot_ad.img}}" mode="aspectFill" />
+        </view>
+
+        <!-- <view class="user_list">
+          <block a:for="{{ lotteryDetail.user_list }}">
+            <view class="user_icon">
+              <image src="{{item.user_icon}}" mode="aspectFill" />
+            </view>
+          </block>
+        </view> -->
+      </view>
+    </view>
+    <!--custom Modal-->
+    <view class="modal_mask" a:if="{{showModal}}"></view>
+    <view class="modal_dialog" a:if="{{showModal}}">
+      <view class="modal_body">
+        <view class='img_modal'>
+          <image src="../../images/successluck.png" mode="aspectFill"></image>
+        </view>
+        <view style="background:#fff;">
+          <view class='modal_title'>已成功参与抽奖
+          </view>
+          <view class="modal_content">
+            {{lead_ad.marketing_content}}
+          </view>
+          <view class='btns'>
+            <button class='join_btn' onTap="toSeeAd">{{lead_ad.button_name}}</button>
+          </view>
+        </view>
+      </view>
+      <view class="modal_close" onTap="hideModal">
+          <image src="../../images/close2.png" mode="aspectFill"></image>
+      </view>
+    </view>
+</view>

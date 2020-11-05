@@ -1,0 +1,81 @@
+<view class="index-wrapper">
+  <view class="container bgWhite">
+    <view class="giftCash">
+      <view>我的礼金</view>
+      <view style="color: #1A1F26;">{{giftCash}}元</view>
+    </view>
+    <view class="h20 bg-gray"></view>
+    <view>
+      <view class="tabClas bgWhite">
+        <block a:for="{{tabs}}">
+          <view key="{{index}}" onTap="toTapTap" data-index="{{index}}" class="{{activeTab===index? 'activeTab':''}}">            {{item.title}}
+          </view>
+        </block>
+      </view>
+      <view style="border-top: 1px solid #d9d9d9;">
+      </view>
+    </view>
+    <view style="padding:32rpx;" a:if="{{activeTab == 0}}">
+      <block a:for="{{ busCouponList }}">
+        <view class="eachCou">
+          <view class="couLeft">
+            <view class="couName">
+              支付宝{{item.name}}
+            </view>
+            <view class="couRemain">
+              剩余 {{item.remain_count}} 张
+            </view>
+          </view>
+          <view class="couRight" data-obj="{{item}}" onTap="toConvert">
+            <view>立即</view>
+            <view>兑换</view>
+          </view>
+        </view>
+      </block>
+      <!-- <view a:if="{{busCouponList.length==0}}">
+        <image class="nullImg" src="../../images/kongyemian1.png" mode="aspectFill" />
+        <view class="nullText">您没有待开奖的活动哦</view>
+        <view class="toDraw" onTap="toDraw">
+          去抽奖</view>
+      </view> -->
+    </view>
+    <view style="padding:32rpx;" a:if="{{activeTab == 1}}">
+      <view class="recordList">
+        <block a:for="{{ myCouponList }}">
+          <view class="eachCou">
+            <view class="couLeft">
+              <view class="couName">
+                支付宝{{item.name}}
+              </view>
+              <view class="couRemain">
+                有效期至：{{item.end_time}}
+              </view>
+            </view>
+            <view class="couRight" data-obj="{{item}}" onTap="handleClick">
+              <view>查看</view>
+              <view>详情</view>
+            </view>
+          </view>         
+        </block>
+        <!-- <scroll-view scroll-y="{{true}}" style="height: 1100rpx;" onScrollToUpper="upper" onScrollToLower="lower" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+          <block a:for="{{ myCouponList }}">
+            <view class="eachCou">
+              <view class="couLeft">
+                <view class="couName">
+                  支付宝{{item.name}}
+                </view>
+                <view class="couRemain">
+                  有效期至：{{item.end_time}}
+                </view>
+              </view>
+              <view class="couRight" data-obj="{{item}}" onTap="handleClick">
+                <view>查看</view>
+                <view>详情</view>
+              </view>
+            </view>         
+          </block>
+        </scroll-view> -->
+      </view>
+    </view>
+  </view>
+</view>

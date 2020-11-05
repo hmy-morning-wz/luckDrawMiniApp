@@ -1,0 +1,108 @@
+/* 全部抽奖 */
+
+.container {
+  padding-bottom: 32rpx;
+}
+
+.tabClas {
+  font-family: PingFangSC-Medium;
+  font-size: 15px;
+  color: #1A1F26;
+  letter-spacing: 0.06rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  display: flex;
+  justify-content: space-around;
+}
+
+.activeTab {
+  font-weight: bold;
+  border-bottom: 6rpx solid #d51d1d;
+  color: #1A1F26;
+}
+
+/* 兑换乘车券 */
+.giftCash {
+  padding: 0 32rpx;
+  height: 122rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #7E7E7E;
+  letter-spacing: 0.07px;
+}
+.eachCou {
+  /* width: 686rpx; */
+  height: 136rpx;
+  margin: 0 auto;
+  margin-bottom: 24rpx;
+  font-family: PingFangSC-Medium;
+  font-size:16px;
+  color: #998115;
+  font-size: bold;
+  line-height: 38rpx;
+  letter-spacing: 0.07rpx;
+  padding-left: 35rpx;
+  padding-right: 56rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: url("../../images/background2.png") no-repeat;
+  background-size: 100% 100%;
+}
+.couRemain {
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 38rpx;
+  margin-top: 8rpx;
+}
+
+
+
+.nullImg {
+  display: block;
+  width: 282rpx;
+  height: 282rpx;
+  margin: 139rpx auto;
+  margin-bottom: 32rpx;
+}
+.nullText {
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #7E7E7E;
+  letter-spacing: 0;
+  text-align: center;
+  margin-bottom: 68rpx;
+}
+.toDraw {
+  width: 176rpx;
+  margin: 0 auto;
+  font-family: PingFangSC-Medium;
+  font-size: 16px;
+  font-weight: bold;
+  color: #D51D1D;
+  letter-spacing: 0.07px;
+  text-align: center;
+  line-height: 70rpx;
+  border: 1px solid #D51D1D;
+  border-radius: 8rpx;
+}
+
+.bc_blue {
+  background: blue;
+  height: 200px;
+}
+.bc_red {
+  background: red;
+  height: 200px;
+}
+.bc_yellow {
+  background: yellow;
+  height: 200px;
+}
+.bc_green {
+  background: green;
+  height: 200px;
+}

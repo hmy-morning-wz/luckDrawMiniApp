@@ -1,0 +1,782 @@
+/* 抽奖首页 */
+@import "../wxParse/wxParse.acss";
+
+.index-wrapper {
+  display: block;
+  padding-bottom: 60rpx;
+  /* background: #fafafa; */
+}
+view {
+  word-break: break-all;
+  overflow: hidden;
+}
+.wxParse-p {
+  width: 100%;
+}
+.wxParse-p image{ 
+  width: 100%;
+}
+
+.lotteryBan {
+  background: #FFFFFF;
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.lotteryImg {
+  width: 100%;
+  /* height: 320rpx; */
+}
+
+.lotteryMes {
+  padding: 0 24rpx;
+}
+
+.prizeBan {}
+
+.prizeBan {
+  font-family: PingFangSC-Medium;
+  font-size: 16px;
+  color: #1A1F26;
+  letter-spacing: 0.03px;
+  line-height: 60rpx;
+  /* font-weight: bold; */
+  padding-top: 10rpx;
+}
+
+.open_date {
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #7E7E7E;
+  letter-spacing: 0.05rpx;
+  line-height: 45rpx;
+  margin-bottom: 13rpx;
+}
+
+.sponsorBan {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #1A1F26;
+  letter-spacing: 0.06rpx;
+  height: 88rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1rpx solid #d9d9d9;
+}
+
+.sponsor {
+  color: #7E7E7E;
+  font-weight: bold;
+  padding: 0 5rpx;
+  display: flex;
+  align-items: center;
+}
+
+.sponsor image {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin: 0 10rpx;
+}
+
+.arrow {
+  width: 20rpx;
+  height: 30rpx;
+}
+
+.arrow image {
+  width: 100%;
+  height: 100%;
+  margin-left: 0;
+}
+
+.sponsor_info {
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #998115;
+  letter-spacing: 0;
+  line-height: 40rpx;
+  /* height: 190rpx; */
+  padding: 32rpx;
+  background: url('../../images/infobg.png') no-repeat;
+  background-size: 100%;
+  background-color: #F3EAC4;
+}
+
+/* 奖品区域 */
+
+.prizeList {
+  padding: 32rpx;
+  background: #FFFFFF;
+}
+
+.fonts {
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #1A1F26;
+  letter-spacing: 0.06rpx;
+}
+
+.infoImg image {
+  width: 100%;
+  margin: 18rpx 0 32rpx 0;
+}
+
+/* 奖池 */
+
+.award_pool {
+  border: 8rpx solid #e5eaef;
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #7E7E7E;
+  letter-spacing: 0.05rpx;
+  padding: 32rpx;
+  line-height: 40rpx;
+  margin: 18rpx 0 32rpx 0;
+}
+
+.redBtn {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #D51D1D;
+  letter-spacing: 0.03px;
+  text-align: center;
+  font-weight: bold;
+  /* width: 188rpx; */
+  border: 1rpx solid #D51D1D;
+  border-radius: 8rpx;
+  padding: 20rpx 15rpx;
+  display: inline-block;
+  margin: 0 auto;
+  /* margin-top: 38rpx; */
+}
+
+.progressBan {
+  padding: 40rpx 0;
+  width: 574rpx;
+  margin: 0 auto;
+}
+
+.curr_amt {
+  height: 54rpx;
+  width: 200rpx;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 36rpx;
+  color: #1A1F26;
+  letter-spacing: 0.06rpx;
+  line-height: 50rpx;
+  position: relative;
+  /* left: 50%; */
+}
+
+.triang {
+  width: 0;
+  /* border-top: 16rpx solid #000; */
+  border-width: 16rpx 8rpx 8rpx 8rpx;
+  border-style: solid;
+  border-color: #000 transparent transparent;
+  /*灰 透明 透明 */
+  position: relative;
+}
+
+.botLine {
+  line-height: 60rpx;
+}
+
+.progressLine {
+  height: 15rpx;
+  background: linear-gradient(to right, #d51d1d 50%, #ededed 50%);
+  border-radius: 8rpx;
+}
+
+.sponsorBan2 {
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #138cf5;
+  letter-spacing: 0.06rpx;
+  height: 104rpx;
+  padding: 0 32rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #E5EAEF;
+  margin-bottom: 35rpx;
+}
+
+/* 抽奖按钮 */
+
+.drawLuck {
+  width: 260rpx;
+  height: 260rpx;
+  margin: 56rpx auto;
+  border-radius: 50%;
+  border: none;
+  font-family: PingFangSC-Medium;
+  font-size: 21px;
+  color: #FFFFFF;
+  letter-spacing: 0.09rpx;
+  line-height: 55rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 1rpx 1rpx 15rpx 1rpx #f77979; */
+}
+
+@-webkit-keyframes twinkling {
+  0% {
+    width: 260rpx;
+    height: 260rpx;
+  }
+  50% {
+    font-size: 21px;
+    -webkit-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    width: 260rpx;
+    height: 260rpx;
+  }
+}
+
+@keyframes twinkling {
+  0% {
+    width: 260rpx;
+    height: 260rpx;
+  }
+  50% {    
+    font-size: 21px;
+    -webkit-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    width: 260rpx;
+    height: 260rpx;
+  }
+}
+
+.toDraw {
+  background: #d51d1d;
+  outline:none;
+  /* -webkit-animation: twinkling 1.5s infinite ease-in-out;
+  animation: twinkling 1.5s infinite ease-in-out;  */
+}
+
+.hasDraw {
+  background: #e14747;
+}
+
+.opact {
+  text-align: center;
+  opacity: 0.5;
+}
+
+.upRate {
+  font-family: PingFangSC-Medium;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 2.09rpx;
+  text-align: center;
+}
+
+/* 抽奖用户 */
+
+.userNumber {
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #7E7E7E;
+  letter-spacing: 0;
+  line-height: 40rpx;
+  text-align: center;
+  margin-top: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toSee {
+  color: #138CF5;
+}
+
+/* user_list */
+
+.user_list {
+  /* width: 524rpx; */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 18rpx;
+}
+.touch_finger {
+  display: inline-block;
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 16rpx;
+}
+
+.user_icon image {
+  width: 68rpx;
+  height: 68rpx;
+  margin-right: 6rpx;
+}
+
+.twoBtn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 15rpx;
+  
+}
+.toShare {
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0.14rpx;
+  width: 414rpx;
+  height: 90rpx;
+  /* margin: 0 auto; */
+  border-radius: 8rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #d3b973;
+  background: #d3b973;
+}
+.otherDraw {
+  background: #fafafa;
+  border: 1rpx solid rgba(0,0,0,0.10);
+  width: 240rpx;
+  color: #333333;
+}
+.pupContent {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 0;
+  z-index: 9999;
+  background-color: white;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+/* 设置显示内容 */
+.showContent {
+  display: block;
+}
+.hideContent {
+  display: none;
+}
+/* 弹出或关闭动画来动态设置内容高度 */
+@keyframes slideContentUp {
+  from {
+    height: 0;
+  }
+  to {
+    height: 120rpx;
+  }
+}
+@keyframes slideContentDown {
+  from {
+    height: 120rpx;
+  }
+  to {
+    height: 0;
+  }
+}
+/* 显示或关闭内容时动画 */
+.open {
+  animation: slideContentUp 0.5s ease-in both;
+  /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+.close {
+  animation: slideContentDown 0.5s ease-in both;
+  /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+
+
+/* 开奖后 */
+.tabClas {
+  font-family: PingFangSC-Medium;
+  font-size: 15px;
+  color: #1A1F26;
+  letter-spacing: 0.06rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.activeTab {
+  font-weight: bold;
+  border-bottom: 6rpx solid #d51d1d;
+  color: #1A1F26;
+}
+swiper {
+  height: 0;
+}
+/* 开奖信息 */
+.awardTit {
+  font-family: PingFangSC-Regular;
+  font-size: 23px;
+  color: #D51D1D;
+  letter-spacing: 0.r1px;
+  line-height: 140rpx;
+}
+.notAward .awardTit {
+  color: #1A1F26;
+}
+.user_award_info {
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #1A1F26;
+  letter-spacing: 0.06px;
+  display: flex;
+  line-height: 40rpx;
+  margin-top: -10rpx;
+}
+.adressBtn {
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0.06px;
+  background: #D87B7B;
+  line-height: 110rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 42rpx;
+}
+.adressBtn image {
+  width: 45rpx;
+  height: 45rpx;
+}
+.adressTip {
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #7E7E7E;
+  letter-spacing: 0.05px;
+  text-align: center;
+  line-height: 80rpx;
+  margin-bottom: 8rpx;
+}
+
+/* 中奖用户信息 */
+.prize_user_Part {
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #7E7E7E;
+  letter-spacing: 0.06rpx;
+  line-height: 86rpx;
+}
+.prize_user_Ban {
+  border: 1px solid #D3D3D3;
+  margin-bottom: 32rpx;
+}
+.prizeBar {
+  text-align: center;
+  background: #fafafa;
+}
+.inPrizeUser {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 46rpx 0;
+  margin-bottom: 10rpx;
+}
+.prize_user_item {
+  width: 33.33%;
+  text-align: center;
+}
+.prize_user_icon image{
+  width: 108rpx;
+  height: 108rpx;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+.toSeeAll {
+  color: #138CF5;
+  text-align: center;
+}
+.info6 {
+  text-align: center;
+  color: #cccccc;
+  font-size: 12px;
+}
+
+/* 推荐券和中奖券 */
+.couponBan {
+  width: 692rpx;
+  height: 170rpx;
+  margin:  30rpx auto;
+  background: url('../../images/backgroundcatch.png') no-repeat;
+  background-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.couponBan image{
+  width: 74rpx;
+  height: 74rpx;
+}
+.couponInfo {
+  width: 406rpx;
+  margin-right: 20rpx;
+  margin-left: 12rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0.93rpx;
+  line-height: 36rpx;
+}
+.couponTit {
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  letter-spacing: 0.05px;
+  margin-bottom: 8rpx;
+}
+.couponSuntit {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;/* （行数） */
+  -webkit-box-orient: vertical;
+}
+.buscouponTit {
+  font-family: PingFangSC-Medium;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 0;
+  margin-bottom: 8rpx;
+}
+.buscouponSuntit {
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #FFD2CB;
+  letter-spacing: 0;
+  line-height: 34rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;/* （行数） */
+  -webkit-box-orient: vertical;
+  padding-right: 32rpx;
+}
+.couponBtn {
+  width: 130rpx;
+  height: 58rpx;
+  /* padding: 16rpx 0; */
+  padding-top: 4rpx;
+  background-image: linear-gradient(-148deg, #FFF3CB 0%, #FFE395 100%);
+  border-radius: 8rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: PingFangSC-Medium;
+  font-size: 13px;
+  color: #C58928;
+  letter-spacing: 0;
+}
+
+.suggestCoupon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32rpx;
+}
+.eachSuggestCoupon {
+  border-radius: 8rpx;
+  width: 260rpx;
+  height: 326rpx;
+  padding: 28rpx 36rpx;
+  border-radius: 8rpx;
+  position: relative;
+}
+.suggestCouponTit {
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #7E7E7E;
+  letter-spacing: 0.06px;
+  line-height: 72rpx;
+}
+.suggestCouponSuntit {
+  font-family: PingFangSC-Medium;
+  font-size: 15px;
+  color: #1A1F26;
+  letter-spacing: 1rpx;
+  line-height: 43rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;/* （行数） */
+  -webkit-box-orient: vertical;
+}
+
+.suggestCouponBtn {
+  position: absolute;
+  bottom: 28rpx;
+  left: 36rpx;
+  width: 260rpx;
+  height: 58rpx;
+  border-radius: 8rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0.06px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.foryou {
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #7E7E7E;
+  letter-spacing: 0.06px;
+  margin-bottom: 28rpx;
+  margin-top: -10rpx;
+}
+.redInfo {
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #D51D1D;
+  letter-spacing: 0;
+  margin-bottom: 30rpx;
+}
+
+
+/* 抽奖弹框 */
+.modal_mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+.modal_dialog {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9500;
+  margin: -345rpx 105rpx;
+}
+.modal_body {
+  width: 540rpx;
+  height: 600rpx;
+  overflow: hidden;
+  text-align: center;
+  /* background: #fff; */
+  border-radius: 8rpx;
+}
+.modal_title {
+  font-family: PingFangSC-Medium;
+  font-size: 40rpx;
+  color: #138cf5;
+  margin-top: 40rpx;
+  line-height: 48rpx;
+}
+.modal_content {
+  width: 460rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #666666;
+  letter-spacing: 0.14rpx;
+  line-height: 40rpx;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 40rpx;
+}
+.img_modal {
+  width: 540rpx;
+  height: 230rpx;
+  margin: 0 auto;
+}
+.img_modal image {
+  width: 100%;
+  height: 100%;
+}
+.join_btn {
+  width: 460rpx;
+  height: 90rpx;
+  margin: 40rpx auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #138CF5;
+  border-radius: 8rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 14px;
+  color: #fff;
+  letter-spacing: 1rpx;
+}
+.modal_close {
+  margin: 0 auto;
+  margin-top: 40rpx;
+  width: 48rpx;
+  height: 48rpx;
+}
+.modal_close image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 底部广告位 */
+.adsense {
+  width: 686rpx;
+  height: 288rpx;
+  margin: 0 auto;
+  margin-top: 56rpx;
+}
+.adsense image{
+  width: 100%;
+  height: 100%;
+}
+
+/* 中奖码中奖 */
+.wincodeBan {
+  margin: 30rpx 0;
+}
+.wincode_code {
+  width: 686rpx;
+  height: 196rpx;
+  margin: 0 auto;
+  background: url('../../images/zhongjiangma.png') no-repeat;
+  background-size: 100%;
+  text-align: center;
+}
+.wincode {
+  font-family: PingFangSC-Semibold;
+  font-size: 48rpx;
+  color: #FFFFFF;
+  letter-spacing: 24rpx;
+  line-height: 67rpx;
+  margin-top: 105rpx;
+}
+.wincode_desc {
+  width: 636rpx;
+  margin: 0 auto;
+  padding: 32rpx 24rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;  
+  color: #999999;
+  line-height: 40rpx;
+  background: #FFFFFF;
+  border: 1rpx solid #D3D3D3;
+  border-top: none;
+}
+.desc_tit {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #333333;
+  margin-bottom: 16rpx;
+}

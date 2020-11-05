@@ -1,0 +1,34 @@
+/* 兑换成功 */
+
+.succ {
+  font-family: PingFangSC-Regular;
+  font-size:16px;
+  color: #505064;
+  text-align: center;
+  line-height: 44rpx;
+  letter-spacing: 0.07px;
+  margin: 0 auto;
+}
+.succ image {
+  width: 140rpx;
+  height: 140rpx;
+  margin-bottom: 28rpx;  
+  margin-top: 204rpx;
+}
+.okBtn {
+  position: absolute;
+  width: 682rpx;
+  left: 32rpx;
+  bottom: 40rpx;
+  border: 1px solid #D51D1D;
+  border-radius: 8rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #D51D1D;
+  letter-spacing: 0.07px;
+  height: 92rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,78 @@
+<view class="index-wrapper">
+  <view class="container bgWhite">
+    <view>
+      <view class="tabClas bgWhite">
+        <block a:for="{{tabs}}">
+          <view key="{{index}}" onTap="toTapTap" data-index="{{index}}" class="{{activeTab===index? 'activeTab':''}}">            {{item.title}}
+          </view>
+        </block>
+      </view>
+      <view style="border-top: 1px solid #d9d9d9;">
+      </view>
+    </view>
+    <view a:if="{{activeTab == 0}}">
+      <block a:for="{{ drawList }}">
+        <view class="lotteryBan" data-obj="{{item}}" onTap="handleClick">
+          <view>
+            <image class="lotteryImg" src="{{'https://sit-img-citytsm.oss-cn-hangzhou.aliyuncs.com/'+item.img}}" mode="aspectFill" />
+          </view>
+          <view class="lotteryMes">
+            <view class="sponsor">{{item.sponsor_name}}  赞助
+            </view>
+            <view class="prizeBan">
+              <view>
+                <block a:for="{{ item.award.award_list }}" a:for-item="award_list">
+                  <view>奖品
+                    <text a:if="{{item.award.pond || (item.award.award_list.length>1)}}">{{index+1}}
+                    </text>：{{award_list}}
+                  </view>
+                </block>
+                <view a:if="{{item.award.pond}}">奖品
+                  <text>{{item.award.award_list.length+1}}
+                  </text>：{{item.award.pond}}
+                </view>
+              </view>
+              <view a:if="{{item.award.pond}}" class="assistance">点击助力
+              </view>
+            </view>
+            <view class="open_date">{{item.open_date}}  自动开奖
+            </view>
+          </view>
+        </view>
+      </block>
+      <view a:if="{{drawList.length==0}}">
+        <image class="nullImg" src="../../images/kongyemian1.png" mode="aspectFill" />
+        <view class="nullText">您没有待开奖的活动哦</view>
+        <view class="toDraw" onTap="toDraw">
+          去抽奖</view>
+      </view>
+    </view>
+    <view a:if="{{activeTab == 1}}">
+      <view class="recordList">
+        <block a:for="{{ luckRecord }}">
+          <view class="eachRecord" data-obj="{{item}}" onTap="handleClick">
+            <view class="recordAward">
+              奖品：
+              <block a:for="{{ item.award.award_list }}" a:for-item="award_item">                
+                  {{award_item}};
+              </block>
+              {{item.award.pond}}
+            </view>
+            <view class="rightRecord">
+              <view class="recordTime">
+                {{item.open_date.split(' ')[0]}}
+              </view> 
+              <image src="../../images/arrow1.png" mode="aspectFill" />
+            </view>
+          </view>         
+        </block>
+      </view>
+      <view a:if="{{luckRecord.length==0}}">
+        <image class="nullImg" src="../../images/kongyemian1.png" mode="aspectFill" />
+        <view class="nullText">您没有已开奖的活动哦</view>
+        <view class="toDraw" onTap="toDraw">
+          去抽奖</view>
+      </view>
+    </view>
+  </view>
+</view>

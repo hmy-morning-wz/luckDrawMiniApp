@@ -1,0 +1,50 @@
+<view class="index-wrapper">
+  <view class="container bgWhite">
+    <view style="padding:32rpx;">
+      <view class="eachCou">
+        <view class="couLeft">
+          <view class="couName">
+            支付宝{{detail.name}}
+          </view>
+          <view class="couRemain">
+            剩余 {{detail.remain_count}} 张
+          </view>
+        </view>
+        <view class="couRight">
+          X1
+        </view>
+      </view>
+      <view class="useInfo">使用说明</view>
+      <block a:for="{{ description }}">
+        <view class="eachDescription">{{item}}</view>
+      </block>
+    </view>
+
+    <view class="botBan">
+      <view style="width:686rpx;margin:0 auto;">
+        <view class="line1">
+          <view>购买数量</view>
+          <view class="numBan">
+            <!-- <view class="minus" onTap="reduceNum">-</view>
+            <view>{{num}}</view>
+            <view class="plus" onTap="increaseNum">+</view> -->
+            <view class="minus" onTap="reduceNum">
+              <image src="../../images/plus.png" mode="widthFix" />
+            </view>
+            <view>{{num}}</view>
+            <view class="plus" onTap="increaseNum">
+              <image src="../../images/minus.png" mode="widthFix" />
+            </view>
+          </view>
+        </view>
+        <view class="line2">
+          <view>当前礼金余额：{{giftCash}}元</view>
+          <view>小计：{{totalAmt}}元礼金</view>
+        </view>
+        <view class="convertBtn" onTap="toCovert" style="background: {{num=='0'? '#d3d3d3':'#d51d1d'}};">
+          立即兑换
+        </view>
+      </view>
+      </view>
+  </view>
+</view>

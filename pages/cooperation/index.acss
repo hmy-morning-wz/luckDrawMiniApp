@@ -1,0 +1,53 @@
+/* 我要上首页 */
+.topBan {
+  padding: 32rpx;
+}
+.grayText {
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #7E7E7E;
+  line-height: 40rpx;
+}
+.redText {
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #D51D1D;
+  line-height: 80rpx;
+}
+.textPart {
+  border-radius: 6rpx;
+  padding: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #1A1F26;
+  word-break: break-all;
+  padding-bottom: 120rpx;
+}
+.plaClass {
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #D3D3D3;
+}
+
+.botBan {
+  position: absolute;
+  width: 682rpx;
+  left: 32rpx;
+  bottom: 40rpx;
+  text-align: center;
+}
+
+.okBtn {
+  background: #D51D1D;
+  border-radius: 8rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: white;
+  letter-spacing: 0.07px;
+  height: 96rpx;
+  text-align: center;
+  margin-top: 45rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

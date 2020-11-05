@@ -1,0 +1,36 @@
+/* 抽奖用户 */
+.userNumber {
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #7E7E7E;
+  letter-spacing: 0;
+}
+
+.userNum {
+  margin-top: 24rpx;
+  margin-bottom: 24rpx;
+}
+
+.toSee {
+  color: #138CF5;
+  margin-top: 60rpx;
+  margin-bottom: 30rpx;
+}
+
+/* user_list */
+
+.user_list {
+  /* width: 702rpx; */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 18rpx;
+}
+
+.user_icon image {
+  width: 70rpx;
+  height: 70rpx;
+  margin-right: 8rpx;
+}

@@ -1,0 +1,43 @@
+/* 全部抽奖 */
+
+.top {
+  padding: 0 24rpx;
+}
+
+.bgYellow {
+  background: #D3B973;
+  padding: 32rpx;
+}
+.couponBg {
+  width: 686rpx;
+  background: white;
+  border-radius: 8rpx;
+  text-align: center;
+  word-break: break-all;
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #AAAAAA;
+  line-height: 50rpx;
+  padding-top: 60rpx;
+  padding-bottom: 100rpx;
+}
+.couTit {
+  font-family: PingFangSC-Medium;
+  font-size: 20px;
+  color: #1A1F26;
+  letter-spacing: 0.07px;
+  line-height: 65rpx;
+  font-weight: bold;
+}
+.yellowText {
+  color: #D3B973;
+  font-family: PingFangSC-Medium;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 25rpx; 
+  line-height: 60rpx;
+}
+.eachDescription {
+  line-height: 40rpx;
+  margin-top: 22rpx;
+}
